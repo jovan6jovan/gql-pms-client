@@ -8,7 +8,7 @@ import "../Modal.css";
 
 interface Props {
   isShowing: boolean;
-  handleToggle: () => void;
+  handleToggle: (shouldOpen: boolean) => void;
 }
 
 const AddClientModal: FC<Props> = ({ isShowing, handleToggle }) => {
@@ -37,6 +37,7 @@ const AddClientModal: FC<Props> = ({ isShowing, handleToggle }) => {
     setName("");
     setEmail("");
     setPhone("");
+    handleToggle(false);
   };
 
   return isShowing
@@ -57,7 +58,7 @@ const AddClientModal: FC<Props> = ({ isShowing, handleToggle }) => {
                   className="modal-close-button"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={handleToggle}
+                  onClick={() => handleToggle(false)}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
