@@ -1,7 +1,8 @@
 import { useMutation } from "@apollo/client";
 import { FC } from "react";
+import { RiDeleteBin7Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import DeleteButton from "../../../../components/Buttons/DeleteButton/DeleteButton";
+import DefaultButton from "../../../../components/Buttons/DefaultButton/DefaultButton";
 import { DELETE_PROJECT } from "../../../../mutations/projects";
 import { GET_PROJECTS } from "../../../../queries/projects";
 import { Project, ProjectsData } from "../../../../types";
@@ -36,7 +37,7 @@ const ProjectsTableRow: FC<Props> = ({ project }) => {
       <td>{project.description}</td>
       <td>{project.status}</td>
       <td>
-        <DeleteButton onClick={deleteProject} />
+        <DefaultButton onClick={deleteProject} icon={<RiDeleteBin7Fill />} />
       </td>
     </tr>
   );

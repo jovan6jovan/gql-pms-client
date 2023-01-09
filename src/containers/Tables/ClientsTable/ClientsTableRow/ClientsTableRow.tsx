@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { FC } from "react";
-import DeleteButton from "../../../../components/Buttons/DeleteButton/DeleteButton";
+import { RiDeleteBin7Fill } from "react-icons/ri";
+import DefaultButton from "../../../../components/Buttons/DefaultButton/DefaultButton";
 import { DELETE_CLIENT } from "../../../../mutations/clients";
 import { GET_CLIENTS } from "../../../../queries/clients";
 import { GET_PROJECTS } from "../../../../queries/projects";
@@ -22,7 +23,7 @@ const ClientsTableRow: FC<Props> = ({ client }) => {
       <td>{client.email}</td>
       <td>{client.phone}</td>
       <td>
-        <DeleteButton onClick={deleteClient} />
+        <DefaultButton onClick={deleteClient} icon={<RiDeleteBin7Fill />} />
       </td>
     </tr>
   );

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DeleteBtn = styled.button`
+export const DefaultBtn = styled.button`
   box-sizing: border-box;
   width: 40px;
   background-color: red;
